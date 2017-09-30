@@ -1,0 +1,63 @@
+<md-content id="main-div" md-truncate>  
+   <section layout="column" flex layout-align="center center" class="login">
+        <md-card class="md-whiteframe-4dp" style="width: 400px;">
+            <md-toolbar>
+                <div layout="column" layout-padding layout-align="center center">
+                    <div class="md-headline md-padding">Sign Up</div>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form name="formValidation" ng-submit="register()" novalidate> 
+          <md-input-container class="md-block">
+                        <label>Name</label>
+            <input name="name" ng-model="registerForm.name" required md-maxlength="40" minlength="4"/>
+            <div ng-messages="formValidation.name.$error" md-auto-hide='false'>
+              <div ng-message="required">Name is mandatory.</div>
+              <div ng-message="minlength">Name should have at least 4 characters.</div>
+              <div ng-message="md-maxlength">Name should have at most 40 characters.</div>
+            </div>
+                    </md-input-container>
+            <md-input-container class="md-block">
+                        <label>Username</label>
+            <input name="username" ng-model="registerForm.username" required md-maxlength="12" minlength="4"/>
+            <div ng-messages="formValidation.username.$error" md-auto-hide='false'>
+              <div ng-message="required">Username is mandatory.</div>
+              <div ng-message="minlength">Username should have at least 4 characters.</div>
+              <div ng-message="md-maxlength">Username should have at most 12 characters.</div>
+            </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" ng-model="registerForm.email" required ng-pattern="/^.+@.+\..+$/" />
+            <div ng-messages="formValidation.email.$error" md-auto-hide='false'> 
+              <div ng-message="required">Email is mandatory.</div>
+              <div ng-message-exp="['pattern']">Email should be @ address</div>
+            </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" ng-model="registerForm.password" required minlength="4"/>
+            <div ng-messages="formValidation.password.$error" md-auto-hide='false'> 
+              <div ng-message="required">Password is mandatory.</div>
+              <div ng-message="minlength">Password should have at least 4 characters.</div>
+            </div>
+                    </md-input-container> 
+          <md-input-container class="md-block">
+                        <label for="confirm password">Confirm Password</label>
+                        <input type="password" name="confirmPassword" ng-model="registerForm.confirmPassword" required compare compare-to="registerForm.password"/>
+            <div ng-messages="formValidation.confirmPassword.$error" md-auto-hide='false'> 
+              <div ng-message="required">Password is mandatory.</div>
+              <div ng-message="compareTo">Password must match the previous entry</div>
+            </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <div layout="row" layout-align="center center">
+                             <md-button class="md-raised md-primary" flex="25" type="submit">Register</md-button>        
+               <md-button class="md-raised md-accent" flex="25" ng-click="switchPath()">Login</md-button> 
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+        </md-card>
+    </section>    
+ </md-content>

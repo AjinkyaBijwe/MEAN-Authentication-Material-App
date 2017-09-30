@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ajinkya</title>
+  <!-- styles -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/default.css">	
+</head>
+<body ng-controller="mainController">
+
+<!-- 	 <div layout="column" flex layout-align="center center" 
+		  ng-if="errorMessage || successMessage" 
+		  ng-class="errorMessage ? 'error-msg' : 'success-msg'">{{errorMessage || successMessage}}</div> -->
+
+  <div ng-view style="height: 100%;"></div>
+
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+  <script src="./main.js"></script>
+  <script src="./services.js"></script>
+  <script src="./controllers.js"></script>   
+  <script src="./directive.js"></script>   
+</body>
+</html>

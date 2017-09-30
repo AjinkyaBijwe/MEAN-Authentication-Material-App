@@ -1,0 +1,35 @@
+  <md-content id="main-div" md-truncate>  
+   <section flex layout="column" layout-align="center center" class="login">
+        <md-card class="md-whiteframe-4dp" style="width: 400px;">
+            <md-toolbar>
+                <div layout="column" layout-padding layout-align="center center">
+                    <div class="md-headline md-padding">Login</div>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form name="formValidation" ng-submit="login()" novalidate> 
+            <md-input-container class="md-block">
+                        <label>Username</label>
+            <input name="username" ng-model="loginForm.username" required/>
+            <div ng-messages="formValidation.username.$error" md-auto-hide='false'>
+              <div ng-message="required">Username is mandatory.</div>
+            </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" ng-model="loginForm.password" required/>
+            <div ng-messages="formValidation.password.$error" md-auto-hide='false'> 
+              <div ng-message="required">Password is mandatory.</div>
+            </div>
+                    </md-input-container> 
+                    <md-input-container class="md-block">
+                        <div layout="row" layout-align="center center">
+               <md-button class="md-raised md-accent" flex="25" type="submit">Login</md-button>                             
+               <md-button class="md-raised md-primary" flex="25" ng-click="switchPath()">Sign Up</md-button>   
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+        </md-card>
+    </section>    
+ </md-content>

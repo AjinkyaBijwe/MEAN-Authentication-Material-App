@@ -1,0 +1,24 @@
+<div>
+	<md-toolbar class="md-hue-2">
+	      <div class="md-toolbar-tools">
+	        <md-button class="md-primary" aria-label="Settings" ng-click="toggleLeft()" id="menu-button">
+	          <i class="material-icons md-48" style="margin-top: 14px;">menu</i>
+	        </md-button>
+	        <span flex md-truncate>Ajinkya Bijwe</span>
+	        <div ng-controller="logoutController" style="float: right;">
+	          <span>Hello!{{name}}</span>
+	          <button ng-click='logout()' class="md-raised md-primary md-button md-ink-ripple flex-25">Logout</button>
+	        </div>
+	      </div>
+	</md-toolbar>
+	<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+	      <md-toolbar class="md-theme-indigo">
+	        <h1 class="md-toolbar-tools">Menu</h1>
+	      </md-toolbar>
+	      <md-content layout-margin>
+	      </md-content>
+	</md-sidenav>
+</div>
+<div layout="column" flex layout-align="center center">
+	
+</div>
