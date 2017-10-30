@@ -10,7 +10,8 @@ angular.module('myApp').factory('AuthService',
       getData : getData,
       login: login,
       logout: logout,
-      register: register
+      register: register,
+      getBlogData: getBlogData
     });
 
     function isLoggedIn() {
@@ -26,6 +27,7 @@ angular.module('myApp').factory('AuthService',
       .success(function (data) {
         if(data.status){
           user = true;
+          getBlogData();
         } else {
           user = false;
         }
@@ -33,6 +35,10 @@ angular.module('myApp').factory('AuthService',
       .error(function (data) {
         user = false;
       });
+    }
+
+    function getBlogData(){
+      return $http.get('/user/blogData');
     }
 
     function getData(username){

@@ -51,6 +51,22 @@ router.get('/logout', function(req, res) {
   });
 });
 
+router.get('/blogData', function (req, res) {
+  var fs = require('fs');
+  var obj;
+  fs.readFile('server/data/blog.json', 'utf8', function (err, data) {
+    if(err){
+      return res.status(200).json({
+        blogData: err
+      });
+    }else{
+       return res.status(200).json({
+         blogData : JSON.parse(data)
+      });
+    }
+  });
+});
+
 router.get('/status', function(req, res) {
   if (!req.isAuthenticated()) {
     return res.status(200).json({

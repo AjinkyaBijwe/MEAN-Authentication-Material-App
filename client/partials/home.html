@@ -7,7 +7,7 @@
 	        <span flex md-truncate>Ajinkya Bijwe</span>
 	        <div ng-controller="logoutController" style="float: right;">
 	          <span>Hello!{{name}}</span>
-	          <button ng-click='logout()' class="md-raised md-primary md-button md-ink-ripple flex-25">Logout</button>
+	          <md-button ng-click='logout()' class="md-raised md-primary md-button md-ink-ripple flex-25">Logout</md-button>
 	        </div>
 	      </div>
 	</md-toolbar>
@@ -16,9 +16,36 @@
 	        <h1 class="md-toolbar-tools">Menu</h1>
 	      </md-toolbar>
 	      <md-content layout-margin>
-	      </md-content>
+      	</md-content>
 	</md-sidenav>
-</div>
-<div layout="column" flex layout-align="center center">
-	
+
+	<div class="md-padding" layout-xs="column">
+		<div ng-repeat="data in blogData track by $index" flex-xs="100" flex-sm="50" flex-md="50" flex="25" 
+		     layout="column" style="display: inline-block;">
+				   <md-card>
+			        <img ng-src="{{data.image}}" class="md-card-image">
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">{{data.headline}}</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-actions layout="row" layout-align="start center" class="layout-align-start-center layout-row">
+			          <md-card-icon-actions>
+			            <md-button class="md-fab md-mini md-primary md-button md-ink-ripple material-icons">
+			            	favorite
+						</md-button>
+			             <md-button class="md-fab md-mini md-primary md-button md-ink-ripple material-icons">
+			            	share
+						</md-button>
+			          </md-card-icon-actions>
+			          <md-button class="md-button md-ink-ripple" type="button"><span>Learn More</span></md-button>
+			        </md-card-actions>
+			        <md-card-content>
+			          <p>
+			            {{data.description}}
+			          </p>
+			        </md-card-content>
+			      </md-card>	
+		</div>
+	</div>
 </div>

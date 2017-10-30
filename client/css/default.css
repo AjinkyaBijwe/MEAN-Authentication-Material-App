@@ -13,7 +13,8 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 .toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
-  color: white; }
+  color: white; 
+}
 
 #menu-button{
   color:white;

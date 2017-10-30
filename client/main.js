@@ -41,6 +41,13 @@ myApp.run(function ($rootScope, $location, $route, AuthService) {
         if (next.access && next.access.restricted && !AuthService.isLoggedIn()){
           $location.path('/login');
           $route.reload();
+        }else{
+          if(AuthService.isLoggedIn()){
+            AuthService.getBlogData()
+            .then(function(data){
+              $rootScope.blogData = data.data.blogData;
+            })
+          }
         }
       });
   });
